@@ -51,3 +51,16 @@
     alter table appointments
     add constraint FK_PATIENT_ID
     foreign key (patient_id) references patients (id);
+
+
+drop view if exists appointment_view;
+create view appointment_view  as(
+SELECT  a.id, p.name as patientName , p.gender, p.birthdate ,
+		d.name as doctorName, d.speciality,
+		a.brief_complain as briefComplain, a.`date`  
+from patients p , appointments a , doctors d 
+
+
+WHERE  p.id = a.patient_id and d.id = a.doctor_id
+ORDER by  p.name
+);
