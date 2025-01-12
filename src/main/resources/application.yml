@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/testdb
-    password: Spring.Student@00
-    username: ahmed2
+    password: type your database password
+    username: type your database username
   jpa:
     show-sql: true
     hibernate:
